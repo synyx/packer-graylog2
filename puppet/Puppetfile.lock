@@ -1,0 +1,38 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppetlabs-apache (1.1.1)
+      puppetlabs-concat (>= 1.0.0)
+      puppetlabs-stdlib (>= 2.4.0)
+    puppetlabs-apt (1.5.2)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.1.0)
+      puppetlabs-stdlib (>= 4.0.0)
+    puppetlabs-java (1.1.1)
+      puppetlabs-stdlib (>= 0.1.6)
+    puppetlabs-stdlib (4.3.2)
+    synyx-elasticsearch (0.3.0)
+      puppetlabs-apt (>= 0.0.1)
+      puppetlabs-stdlib (>= 0.0.1)
+    synyx-graylog2 (0.5.1)
+      puppetlabs-apt (>= 0.0.1)
+      puppetlabs-stdlib (>= 0.0.1)
+    synyx-mongodb (0.4.0)
+      puppetlabs-apt (>= 0.0.1)
+      puppetlabs-stdlib (>= 0.0.1)
+
+GIT
+  remote: https://github.com/synyx/puppet-debian-base.git
+  ref: master
+  sha: 102b2fc1f5e5b61c6225289679153273bf7dc0c9
+  specs:
+    debian_base (0.0.1)
+
+DEPENDENCIES
+  debian_base (>= 0)
+  puppetlabs-apache (= 1.1.1)
+  puppetlabs-java (>= 0)
+  synyx-elasticsearch (= 0.3.0)
+  synyx-graylog2 (= 0.5.1)
+  synyx-mongodb (= 0.4.0)
+

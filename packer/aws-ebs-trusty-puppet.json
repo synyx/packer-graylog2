@@ -1,0 +1,33 @@
+{
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": "",
+        "aws_region": "eu-west-1",
+        "aws_source_ami": "ami-41bf6c36",
+        "aws_instance_type": "t1.micro",
+        "aws_ami_name": "graylog2_trusty_x86_64-{{timestamp}}",
+        "ssh_username": "ubuntu"
+    },
+    "builders":[{
+       "type": "amazon-ebs",
+       "access_key": "{{user `aws_access_key`}}",
+       "secret_key": "{{user `aws_secret_key`}}",
+       "region": "{{user `aws_region`}}",
+       "source_ami": "{{user `aws_source_ami`}}",
+       "instance_type": "{{user `aws_instance_type`}}",
+       "ami_name": "{{user `aws_ami_name`}}",
+       "ssh_username": "ubuntu"
+    }],
+    "provisioners":[
+        {
+            "type": "shell",
+            "script": "scripts/bootstrap_puppet.sh"
+        },
+        {
+            "type": "puppet-masterless",
+            "manifest_dir": "../puppet/manifests/",
+            "manifest_file": "../puppet/manifests/site.pp",
+            "module_paths": [ "../puppet/modules/" ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+forge "https://forgeapi.puppetlabs.com"
+
+mod 'debian_base',
+    :git => 'https://github.com/synyx/puppet-debian-base.git',
+    :ref => 'master'
+
+mod 'synyx/graylog2', '0.5.1'
+
+mod 'synyx/elasticsearch', '0.3.0'
+
+mod 'synyx/mongodb', '0.4.0'
+
+mod 'puppetlabs/java'
+
+mod 'puppetlabs/apache', '1.1.1'
